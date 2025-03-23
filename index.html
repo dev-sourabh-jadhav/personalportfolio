@@ -12,6 +12,8 @@
     <script src="src/script.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
     <meta name="theme-color" content="#6D28D9">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
 </head>
 
 <body class="h-screen bg-gray-900 text-white font-mono">
@@ -41,8 +43,8 @@
                     <button
                         class="file-tab hover:bg-gray-700 w-full text-left px-2 py-1 rounded transition duration-150 flex items-center space-x-2"
                         data-file="home">
-                        <img src="src/images/html5-original.png" alt="HTML Icon" class="w-4 h-4" />
-                        <span>index.html</span>
+                        <img src="src/images/laravel.png" alt="HTML Icon" class="w-4 h-4" />
+                        <span>index.blade.php</span>
                     </button>
                 </li>
                 <li>
@@ -75,8 +77,8 @@
             <div class="flex bg-gray-800 text-gray-300 border-b border-gray-700">
                 <div class="tab px-4 py-2 cursor-pointer hover:bg-gray-700 active-tab flex items-center space-x-2"
                     data-file="home">
-                    <img src="src/images/html5-original.png" alt="HTML Icon" class="w-4 h-4" />
-                    <span>index.html</span>
+                    <img src="src/images/laravel.png" alt="HTML Icon" class="w-4 h-4" />
+                    <span>index.blade.php</span>
                 </div>
                 <div class="tab px-4 py-2 cursor-pointer hover:bg-gray-700 flex items-center space-x-2"
                     data-file="about">
@@ -203,19 +205,132 @@
 
                             </div>
 
+                            <!-- Modal -->
                             <div id="loadMoreModal"
                                 class="fixed inset-0 bg-black bg-opacity-50 hidden justify-center items-center z-50">
-                                <div class="bg-white text-black rounded-lg w-full max-w-md p-6 relative">
-                                    <h2 class="text-xl font-bold mb-4">IMAGES </h2>
-                                    <p class="mb-4">Other Model.</p>
 
-                                    <!-- Close button -->
-                                    <button id="closeModal"
-                                        class="absolute top-2 right-2 text-gray-600 hover:text-black text-2xl">
-                                        &times;
-                                    </button>
+                                <div class="bg-white text-black rounded-lg w-full p-6 relative shadow-lg"
+                                    style="max-width: 36rem;">
+
+                                    <!-- Header -->
+                                    <div class="flex justify-between items-center border-b pb-3 mb-4">
+                                        <h2 class="text-xl font-bold">Tech Stack</h2>
+                                        <button
+                                            onclick="document.getElementById('loadMoreModal').classList.add('hidden')"
+                                            class="text-gray-600 hover:text-black text-2xl leading-none">&times;</button>
+                                    </div>
+
+                                    <!-- Row 1 -->
+                                    <div class="flex flex-wrap -mx-2 mb-4">
+                                        <div class="w-1/4 px-2 text-center bg-gray-100 tech-card">
+                                            <div class="px-4 flex items-center space-x-2">
+                                                <img src="src/images/html5-original.png" alt="HTML Icon"
+                                                    class="w-4 h-4" />
+                                                <span>HTML</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="w-1/4 px-2 text-center bg-gray-100 tech-card">
+                                            <div class="px-4 flex items-center space-x-2">
+                                                <img src="src/images/css3-original.png" alt="HTML Icon"
+                                                    class="w-4 h-4" />
+                                                <span>CSS</span>
+                                            </div>
+                                        </div>
+                                        <div class="w-1/4 px-2 text-center bg-gray-100 tech-card">
+                                            <div class="px-4 flex items-center space-x-2">
+                                                <img src="src/images/javascript-original.png" alt="HTML Icon"
+                                                    class="w-4 h-4" />
+                                                <span>JavaScript</span>
+                                            </div>
+                                        </div>
+                                        <div class="w-1/4 px-2 text-center bg-gray-100 tech-card">
+                                            <div class="px-4 flex items-center space-x-2">
+                                                <img src="src/images/bootstrap-original.png" alt="HTML Icon"
+                                                    class="w-4 h-4" />
+                                                <span>Bootstrap</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="w-1/4 px-2 text-center bg-gray-100 tech-card">
+                                            <div class="px-4 flex items-center space-x-2">
+                                                <img src="src/images/tailwindcss-original.png" alt="HTML Icon"
+                                                    class="w-4 h-4" />
+                                                <span>Tailwindcss</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="w-1/4 px-2 text-center bg-gray-100 tech-card">
+                                            <div class="px-4 flex items-center space-x-2">
+                                                <img src="src/images/jquery.png" alt="HTML Icon" class="w-4 h-4" />
+                                                <span>jQuery</span>
+                                            </div>
+                                        </div>
+                                        <div class="w-1/4 px-2 text-center bg-gray-100 tech-card">
+                                            <div class="px-4 flex items-center space-x-2">
+                                                <img src="src/images/sql.png" alt="HTML Icon" class="w-4 h-4" />
+                                                <span>SQL</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="w-1/4 px-2 text-center bg-gray-100 tech-card">
+                                            <div class="px-4 flex items-center space-x-2">
+                                                <img src="src/images/python.png" alt="HTML Icon" class="w-4 h-4" />
+                                                <span>Python</span>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="w-1/4 px-2 text-center bg-gray-100 tech-card">
+                                            <div class="px-4 flex items-center space-x-2">
+                                                <img src="src/images/laravel.png" alt="HTML Icon" class="w-4 h-4" />
+                                                <span>Laravel</span>
+                                            </div>
+                                        </div>
+                                        <div class="w-1/4 px-2 text-center bg-gray-100 tech-card">
+                                            <div class="px-4 flex items-center space-x-2">
+                                                <img src="src/images/php.png" alt="HTML Icon" class="w-4 h-4" />
+                                                <span>PHP</span>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="w-1/4 px-2 text-center bg-gray-100 tech-card ">
+                                            <div class="px-4 flex items-center space-x-2">
+                                                <img src="src/images/wordpress.png" alt="HTML Icon" class="w-4 h-4" />
+                                                <span>WordPress</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="w-1/4 px-2 text-center bg-gray-100 tech-card">
+                                            <div class="px-4 flex items-center space-x-2">
+                                                <img src="src/images/github-icon.png" alt="HTML Icon" class="w-4 h-4" />
+                                                <span>git</span>
+                                            </div>
+                                        </div>
+
+
+
+                                        <div class="w-1/4 px-2 text-center bg-gray-100 tech-card">
+                                            <div class="px-4 flex items-center space-x-2">
+                                                <img src="src/images/upwork.png" alt="Upwork Icon" class="w-4 h-4" />
+                                                <span>Upwork</span>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="w-1/4 px-2 text-center bg-gray-100 tech-card">
+                                            <div class="px-4 flex items-center space-x-2">
+                                                <img src="src/images/bitbucket.png" alt="Bitbucket Icon"
+                                                    class="w-4 h-4" />
+                                                <span>Bitbucket</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
+
 
                         </div>
                     </div>
@@ -224,53 +339,125 @@
 
                 <!-- ABOUT Section-->
                 <div class="file-content hidden" id="file-about">
-                    <div
-                        class="text-center space-y-6 font-mono text-white px-6 py-12 bg-gray-900 rounded-2xl shadow-xl">
-                        <!-- Name -->
-                        <h1class="text-5xl sm:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r
-                            from-red-500 via-rose-400 to-pink-500 animate-pulse">
-                            Sourabh Jadhav
-                            </h1class=>
-                            <!-- DOMAIN (ROLE) -->
-                            <p class="text-xl text-gray-400 tracking-wide uppercase">Developer</p>
-                            <!-- OTHER DETAIL -->
+                    <!-- Main Page Wrapper with Background -->
+                    <div class="bg-[#0B1120] text-white font-sans py-10 px-4 min-h-screen">
+
+                        <!-- Education & Experience Section -->
+                        <div class="flex flex-col md:flex-row gap-6 max-w-5xl w-full mx-auto">
+
+                            <!-- Education Section -->
                             <div
-                                class="space-y-5 max-w-3xl mx-auto text-sm sm:text-base leading-relaxed text-gray-300 mt-6 backdrop-blur-md p-6 rounded-xl border border-gray-700 bg-gray-800/40">
-                                <p>
-                                    👋 Hey! I'm a developer from Pune, India. I specialize in building clean
-                                    and functional websites using
-                                    <span class="font-semibold text-white">PHP, Laravel, JavaScript,jQuery,
-                                        etc..</span>,
-                                    and
-                                    modern tools .
-                                    I enjoy turning complex ideas into smooth, responsive web experiences.
-                                </p>
+                                class="w-full md:w-1/2 p-6 rounded-lg bg-[#1a2526] border border-green-500 snake-border">
+                                <div class="flex items-center mb-6">
+                                    <i class="fas fa-graduation-cap text-orange-500 mr-2"></i>
+                                    <h2 class="text-2xl font-bold">Education</h2>
+                                </div>
 
-
-
-
-                                <!-- Experience Section -->
-                                <div class="text-left">
-                                    <h2 class="text-2xl font-bold text-red-400 mb-3">🚀 Experience</h2>
-                                    <p class="mb-2">
-                                        Worked at <span class="text-red-400 font-semibold">Walstar Technologies</span>
-                                        as a
-                                        Laravel & PHP Developer.
-                                        Collaborated with a team to build real-time web applications, admin dashboards,
-                                        and
-                                        custom WordPress sites.
-                                        Also responsible for managing client projects from <span
-                                            class="font-semibold text-white">Upwork too</span>.
-
-                                    </p>
-
-                                    <p>
-                                        I’ve led development ...LOADING
-                                    </p>
+                                <div class="relative pl-6 timeline space-y-6">
+                                    <!-- ALL EDU-->
+                                    <div class="flex items-start space-x-4">
+                                        <div class="bullet"></div>
+                                        <div>
+                                            <p class="font-semibold">● 2022 – 2024 Master’s Of Computer Application
+                                                (MCA)</p>
+                                            <p class="text-sm text-gray-300">| D Y Patil Agriculture & Technical
+                                                College, Kolhapur</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start space-x-4">
+                                        <div class="bullet"></div>
+                                        <div>
+                                            <p class="font-semibold">● 2019 – 2022 Bachelor’s Of Computer Science (BCS)
+                                            </p>
+                                            <p class="text-sm text-gray-300">| Shivaji University, Kolhapur</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start space-x-4">
+                                        <div class="bullet"></div>
+                                        <div>
+                                            <p class="font-semibold">● 2016 – 2018 HSC (12th)</p>
+                                            <p class="text-sm text-gray-300">| D.R Mane Mahavidyalaya, Kagal</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start space-x-4">
+                                        <div class="bullet"></div>
+                                        <div>
+                                            <p class="font-semibold">● 2015 – 2016 SSC (10th)</p>
+                                            <p class="text-sm text-gray-300">| Holyden English Medium School, Kagal</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
+
+                            <!-- Experience Section -->
+                            <div
+                                class="w-full md:w-1/2 p-6 rounded-lg bg-[#1a2526] border border-blue-500 snake-border">
+                                <div class="flex items-center mb-6">
+                                    <i class="fas fa-briefcase text-blue-400 mr-2"></i>
+                                    <h2 class="text-2xl font-bold">Experience</h2>
+                                </div>
+
+                                <div class="relative pl-6 timeline space-y-6">
+                                    <div class="flex items-start space-x-4">
+                                        <div class="bullet"></div>
+                                        <div>
+                                            <p class="font-semibold">● 2025 J.R PHP Developer</p>
+                                            <p class="text-sm text-gray-300">| Appcart Systems Pvt Ltd</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start space-x-4">
+                                        <div class="bullet"></div>
+                                        <div>
+                                            <p class="font-semibold">● 2024 – 2025 PHP Laravel Developer</p>
+                                            <p class="text-sm text-gray-300">| Walstar Technologies Pvt Ltd</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start space-x-4">
+                                        <div class="bullet"></div>
+                                        <div>
+                                            <p class="font-semibold">● 2023 – 2024 Web Developer Intern</p>
+                                            <p class="text-sm text-gray-300">| Walstar Media LLP</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Additional Cards Section (mt-10 for spacing) -->
+                        <div class="mt-10 max-w-5xl w-full mx-auto">
+                            <div class="bg-[#1a2526] border border-purple-500 rounded-lg p-6 shadow-lg">
+                                <h2 class="text-2xl font-bold mb-6 flex items-center">
+                                    <i class="fas fa-layer-group text-purple-400 mr-2"></i> Other Certifications
+                                </h2>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+                                    <div class="bg-[#16232c] p-4 rounded-md border border-gray-700">
+                                        <h3 class="font-semibold text-lg text-green-400 flex items-center">
+                                            <i class="fas fa-keyboard mr-2 text-green-300"></i> Typing Certification
+                                        </h3>
+                                        <p class="text-sm text-gray-300">Typing Speed: 30 & 40 wpm (Government
+                                            Certified)</p>
+                                    </div>
+                                    <!-- // Typing Certification -->
+                                    <div class="bg-[#16232c] p-4 rounded-md border border-gray-700">
+                                        <h3 class="font-semibold text-lg text-blue-400 flex items-center">
+                                            <i class="fas fa-file-invoice-dollar mr-2 text-blue-300"></i> Accounting
+                                            Software
+                                        </h3>
+                                        <p class="text-sm text-gray-300">Completed training in Tally ERP 9</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
                     </div>
                 </div>
+
+
+
+
+
 
 
 
