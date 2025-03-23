@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sourabh Jadhav Portfolio</title>
+    <link rel="shortcut icon" href="src/images/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="src/output.css">
+    <link rel="stylesheet" href="src/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="src/script.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <meta name="theme-color" content="#6D28D9">
+</head>
+
+<body class="h-screen bg-gray-900 text-white font-mono">
+
+    <!-- Layout Wrapper -->
+    <div class="flex h-full">
+
+        <!-- Sidebar -->
+        <aside class="w-16 bg-gray-800 flex flex-col items-center py-4 space-y-4">
+            <button title="Explorer">📁</button>
+            <button title="Search">🔍</button>
+            <button title="Git">🔧</button>
+        </aside>
+
+        <!-- File Explorer -->
+        <div class="w-64 bg-gray-850 border-r border-gray-700 p-4">
+            <h2 class="text-sm font-bold text-gray-400 mb-2">EXPLORER</h2>
+            <div class="text-sm font-bold text-gray-400 mb-2 cursor-pointer flex items-center justify-between"
+                onclick="toggleDropdown()">
+                <span>📁 Portfolio</span>
+                <i id="dropdownIcon" class="bi bi-chevron-down transition-transform duration-200"></i>
+            </div>
+
+
+            <ul id="dropdownList" class="space-y-2 text-sm transition-all duration-300 ease-in-out">
+                <li>
+                    <button
+                        class="file-tab hover:bg-gray-700 w-full text-left px-2 py-1 rounded transition duration-150 flex items-center space-x-2"
+                        data-file="home">
+                        <img src="src/images/html5-original.png" alt="HTML Icon" class="w-4 h-4" />
+                        <span>index.html</span>
+                    </button>
+                </li>
+                <li>
+                    <button
+                        class="file-tab hover:bg-gray-700 w-full text-left px-2 py-1 rounded transition duration-150 flex items-center space-x-2"
+                        data-file="about">
+                        <img src="src/images/javascript-original.png" alt="JS Icon" class="w-4 h-4" />
+                        <span>about.js</span>
+                    </button>
+                </li>
+                <li>
+                    <button
+                        class="file-tab hover:bg-gray-700 w-full text-left px-2 py-1 rounded transition duration-150 flex items-center space-x-2"
+                        data-file="contact">
+                        <img src="src/images/css3-original.png" alt="CSS Icon" class="w-4 h-4" />
+                        <span>contact.css</span>
+                    </button>
+                </li>
+            </ul>
+
+
+
+
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="flex-1 flex flex-col">
+
+            <!-- Top Bar -->
+            <div class="flex bg-gray-800 text-gray-300 border-b border-gray-700">
+                <div class="tab px-4 py-2 cursor-pointer hover:bg-gray-700 active-tab flex items-center space-x-2"
+                    data-file="home">
+                    <img src="src/images/html5-original.png" alt="HTML Icon" class="w-4 h-4" />
+                    <span>index.html</span>
+                </div>
+                <div class="tab px-4 py-2 cursor-pointer hover:bg-gray-700 flex items-center space-x-2"
+                    data-file="about">
+                    <img src="src/images/javascript-original.png" alt="JS Icon" class="w-4 h-4" />
+                    <span>about.js</span>
+                </div>
+                <div class="tab px-4 py-2 cursor-pointer hover:bg-gray-700 flex items-center space-x-2"
+                    data-file="contact">
+                    <img src="src/images/css3-original.png" alt="CSS Icon" class="w-4 h-4" />
+                    <span>contact.css</span>
+                </div>
+            </div>
+
+
+            <!-- All-Area Main Pages-->
+            <div class="flex-1 p-6 overflow-auto">
+
+                <!-- INDEX -->
+                <div class="file-content" id="file-home">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- Laravel ORM Code Of My Self-sj -->
+                        <div class="bg-gray-800 rounded-lg p-4 text-sm font-mono overflow-auto shadow-lg">
+                            <!-- USING PRE TAG -->
+                            <pre class="text-green-400 leading-relaxed">
+                <span class="text-pink-400">&lt;?php</span>
+                
+                <span class="text-purple-400">namespace</span> <span class="text-orange-400">App\Models</span>;
+                
+                <span class="text-purple-400">use</span> Illuminate\Database\Eloquent\Model;
+                
+                <span class="text-purple-400">class</span> <span class="text-yellow-300">Developer</span> <span class="text-purple-400">extends</span> Model
+                {
+                    <span class="text-blue-400">protected</span> <span class="text-green-400">$table</span> = <span class="text-orange-400">'developers'</span>;
+                
+                    <span class="text-blue-400">protected</span> <span class="text-green-400">$fillable</span> = [
+                        <span class="text-orange-400">'name'</span>,
+                        <span class="text-orange-400">'role'</span>,
+                        <span class="text-orange-400">'bio'</span>,
+                    ];
+                
+                    <span class="text-blue-400">public function</span> projects()
+                    {
+                        <span class="text-purple-400">return</span> $this->hasMany(Project::class);
+                    }
+                }
+                            </pre>
+                        </div>
+
+                        <!-- Info Section -->
+                        <div class="flex flex-col justify-center space-y-4">
+                            <h1 class="text-4xl font-bold text-white">
+                                <span class="text-white">Sourabh</span>
+                                <span class="text-red-400">Jadhav<span class="blinking-cursor"></span></span>
+                            </h1>
+                            <h2 class="text-xl text-gray-300">Full Stack Web Developer</h2>
+                            <p class="text-gray-400">
+                                I build elegant, responsive web applications using Laravel, and modern tools.
+                                Focused on clean code, efficient backend logic, and intuitive user experiences.
+                            </p>
+
+                            <!-- horizontal scrolling animation using images-->
+                            <div class="w-full flex flex-col items-center">
+                                <!-- Fixed-width container for animation -->
+                                <div class="w-[400px] overflow-hidden">
+                                    <div class="flex w-max animate-scroll-left space-x-4">
+                                        <!-- Repeated glowing images -->
+                                        <div class="animation">
+                                            <img src="src/images/laravel.png" alt="Laravel" />
+                                        </div>
+                                        <div class="animation">
+                                            <img src="src/images/python.png" alt="Tailwind" />
+                                        </div>
+                                        <div class="animation">
+                                            <img src="src/images/javascript-original.png" alt="JS" />
+                                        </div>
+                                        <div class="animation">
+                                            <img src="src/images/bootstrap-original.png" alt="Bootstrap" />
+                                        </div>
+                                        <div class="animation">
+                                            <img src="src/images/css3-original.png" alt="CSS3" />
+                                        </div>
+                                        <div class="animation">
+                                            <img src="src/images/tailwindcss-original.png" alt="Tailwind" />
+                                        </div>
+                                        <div class="animation">
+                                            <img src="src/images/jquery.png" alt="Tailwind" />
+                                        </div>
+
+
+                                        <!-- Repeating again for images loop -->
+                                        <div class="animation">
+                                            <img src="src/images/laravel.png" alt="Laravel" />
+                                        </div>
+                                        <div class="animation">
+                                            <img src="src/images/python.png" alt="Tailwind" />
+                                        </div>
+                                        <div class="animation">
+                                            <img src="src/images/javascript-original.png" alt="JS" />
+                                        </div>
+                                        <div class="animation">
+                                            <img src="src/images/bootstrap-original.png" alt="Bootstrap" />
+                                        </div>
+                                        <div class="animation">
+                                            <img src="src/images/css3-original.png" alt="CSS3" />
+                                        </div>
+                                        <div class="animation">
+                                            <img src="src/images/tailwindcss-original.png" alt="Tailwind" />
+                                        </div>
+                                        <div class="animation">
+                                            <img src="src/images/jquery.png" alt="Tailwind" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Load More text -->
+                                <button
+                                    class="mt-4 relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800"
+                                    id="loadmore-btn">
+                                    <span
+                                        class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
+                                        Load More
+                                    </span>
+                                </button>
+
+                            </div>
+
+                            <div id="loadMoreModal"
+                                class="fixed inset-0 bg-black bg-opacity-50 hidden justify-center items-center z-50">
+                                <div class="bg-white text-black rounded-lg w-full max-w-md p-6 relative">
+                                    <h2 class="text-xl font-bold mb-4">IMAGES </h2>
+                                    <p class="mb-4">Other Model.</p>
+
+                                    <!-- Close button -->
+                                    <button id="closeModal"
+                                        class="absolute top-2 right-2 text-gray-600 hover:text-black text-2xl">
+                                        &times;
+                                    </button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- ABOUT Section-->
+                <div class="file-content hidden" id="file-about">
+                    <div
+                        class="text-center space-y-6 font-mono text-white px-6 py-12 bg-gray-900 rounded-2xl shadow-xl">
+                        <!-- Name -->
+                        <h1class="text-5xl sm:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r
+                            from-red-500 via-rose-400 to-pink-500 animate-pulse">
+                            Sourabh Jadhav
+                            </h1class=>
+                            <!-- DOMAIN (ROLE) -->
+                            <p class="text-xl text-gray-400 tracking-wide uppercase">Developer</p>
+                            <!-- OTHER DETAIL -->
+                            <div
+                                class="space-y-5 max-w-3xl mx-auto text-sm sm:text-base leading-relaxed text-gray-300 mt-6 backdrop-blur-md p-6 rounded-xl border border-gray-700 bg-gray-800/40">
+                                <p>
+                                    👋 Hey! I'm a developer from Pune, India. I specialize in building clean
+                                    and functional websites using
+                                    <span class="font-semibold text-white">PHP, Laravel, JavaScript,jQuery,
+                                        etc..</span>,
+                                    and
+                                    modern tools .
+                                    I enjoy turning complex ideas into smooth, responsive web experiences.
+                                </p>
+
+
+
+
+                                <!-- Experience Section -->
+                                <div class="text-left">
+                                    <h2 class="text-2xl font-bold text-red-400 mb-3">🚀 Experience</h2>
+                                    <p class="mb-2">
+                                        Worked at <span class="text-red-400 font-semibold">Walstar Technologies</span>
+                                        as a
+                                        Laravel & PHP Developer.
+                                        Collaborated with a team to build real-time web applications, admin dashboards,
+                                        and
+                                        custom WordPress sites.
+                                        Also responsible for managing client projects from <span
+                                            class="font-semibold text-white">Upwork too</span>.
+
+                                    </p>
+
+                                    <p>
+                                        I’ve led development ...LOADING
+                                    </p>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+
+
+
+
+                <!-- LOADINF Section-->
+                <div class="file-content hidden" id="file-contact">
+                    <h1 class="text-xl text-yellow-400 mb-2">Contact Info</h1>
+                    <p class="text-gray-300">📧 Email: sourabhsjsjsjsj@gmail.com</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+
+
+</body>
+
+</html>

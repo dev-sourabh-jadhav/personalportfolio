@@ -1,0 +1,75 @@
+.blinking-cursor::after {
+    content: "|";
+    animation: blink 1s step-start infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+
+@keyframes glow-pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4);
+        /* blue glow */
+    }
+
+    70% {
+        box-shadow: 0 0 0 20px rgba(59, 130, 246, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+    }
+}
+
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* <!-- horizontal scrolling animation --> */
+
+
+.animate-scroll-left {
+    animation: scroll-left 20s linear infinite;
+    
+}
+
+.animation {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: white;
+    animation: glow-pulse 2s ease-out infinite;
+}
+
+.animation img {
+    width: 36px;
+    height: 36px;
+}
+
+@keyframes glow-pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4);
+    }
+
+    70% {
+        box-shadow: 0 0 0 20px rgba(59, 130, 246, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+    }
+}
