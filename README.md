@@ -15,7 +15,9 @@ This is a **personal portfolio website** built using **HTML, CSS, JavaScript, Ta
 - **Animations:** CSS Keyframes, Conic-gradient Borders
 
 ## 📷 Screenshots
-![Portfolio Preview](path-to-your-image.png)
+![Portfolio Preview]
+<img src="https://raw.githubusercontent.com/dev-sourabh-jadhav/personalportfolio/main/src/images/indexpage.png" alt="Portfolio Preview" width="600">
+
 
 
 ## 🔗 Live Demo
