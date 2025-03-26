@@ -5,14 +5,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sourabh Jadhav Portfolio</title>
+    <!-- FAVICON -->
     <link rel="shortcut icon" href="src/images/favicon.png" type="image/x-icon">
+    <!-- Tailwind  -->
     <link rel="stylesheet" href="src/output.css">
     <link rel="stylesheet" href="src/style.css">
+    <!-- jquery CDN -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- OWN SCRIPT -->
     <script src="src/script.js"></script>
+    <script src="src/gitscrip.js"></script>
+    <!-- ICON FONT CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-    <meta name="theme-color" content="#6D28D9">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
 
 </head>
 
@@ -63,6 +69,22 @@
                         <span>contact.css</span>
                     </button>
                 </li>
+                <li>
+                    <button
+                        class="file-tab hover:bg-gray-700 w-full text-left px-2 py-1 rounded transition duration-150 flex items-center space-x-2"
+                        data-file="project">
+                        <img src="src/images/php.png" alt="CSS Icon" class="w-4 h-4" />
+                        <span>project.php</span>
+                    </button>
+                </li>
+                <li>
+                    <button
+                        class="file-tab hover:bg-gray-700 w-full text-left px-2 py-1 rounded transition duration-150 flex items-center space-x-2"
+                        data-file="repository">
+                        <img src="src/images/git.png" alt="CSS Icon" class="w-4 h-4" />
+                        <span>repository.git</span>
+                    </button>
+                </li>
             </ul>
 
 
@@ -89,6 +111,16 @@
                     data-file="contact">
                     <img src="src/images/css3-original.png" alt="CSS Icon" class="w-4 h-4" />
                     <span>contact.css</span>
+                </div>
+                <div class="tab px-4 py-2 cursor-pointer hover:bg-gray-700 flex items-center space-x-2"
+                    data-file="project">
+                    <img src="src/images/php.png" alt="CSS Icon" class="w-4 h-4" />
+                    <span>project.php</span>
+                </div>
+                <div class="tab px-4 py-2 cursor-pointer hover:bg-gray-700 flex items-center space-x-2"
+                    data-file="repository">
+                    <img src="src/images/git.png" alt="CSS Icon" class="w-4 h-4" />
+                    <span>repository.git</span>
                 </div>
             </div>
 
@@ -360,16 +392,18 @@
                                         <div>
                                             <p class="font-semibold">● 2022 – 2024 Master’s Of Computer Application
                                                 (MCA)</p>
-                                            <p class="text-sm text-gray-300">| D Y Patil Agriculture & Technical
-                                                College, Kolhapur</p>
+                                            <p class="text-sm text-gray-300">| D. Y. Patil Agriculture and Technical
+                                                University, Kolhapur</p>
                                         </div>
                                     </div>
                                     <div class="flex items-start space-x-4">
                                         <div class="bullet"></div>
                                         <div>
-                                            <p class="font-semibold">● 2019 – 2022 Bachelor’s Of Computer Science (BCS)
+                                            <p class="font-semibold">● 2019 – 2022 Bachelor’s Of Computer Applications
+                                                (BCA)
                                             </p>
-                                            <p class="text-sm text-gray-300">| Shivaji University, Kolhapur</p>
+                                            <p class="text-sm text-gray-300">| Gopal Krishna Gokhale College, Kolhapur
+                                            </p>
                                         </div>
                                     </div>
                                     <div class="flex items-start space-x-4">
@@ -401,26 +435,36 @@
                                     <div class="flex items-start space-x-4">
                                         <div class="bullet"></div>
                                         <div>
-                                            <p class="font-semibold">● 2025 J.R PHP Developer</p>
-                                            <p class="text-sm text-gray-300">| Appcart Systems Pvt Ltd</p>
+                                            <p class="font-semibold">● J.R PHP Developer</p>
+                                            <p class="text-sm text-gray-300">| Appcart Systems Pvt Ltd, Pune</p>
+                                            <!-- Middle p tag different color -->
+                                            <p class="text-sm text-green-400">| Feb 2025 - Present</p>
+                                            <!-- Last p tag different color -->
                                         </div>
                                     </div>
                                     <div class="flex items-start space-x-4">
                                         <div class="bullet"></div>
                                         <div>
-                                            <p class="font-semibold">● 2024 – 2025 PHP Laravel Developer</p>
-                                            <p class="text-sm text-gray-300">| Walstar Technologies Pvt Ltd</p>
+                                            <p class="font-semibold">● PHP Laravel Developer</p>
+                                            <p class="text-sm text-gray-300">| Walstar Technologies Pvt Ltd, Kolhapur
+                                            </p> <!-- Middle p tag different color -->
+                                            <p class="text-sm text-green-400">| June 2024 – Jan 2025</p>
+                                            <!-- Last p tag different color -->
                                         </div>
                                     </div>
                                     <div class="flex items-start space-x-4">
                                         <div class="bullet"></div>
                                         <div>
-                                            <p class="font-semibold">● 2023 – 2024 Web Developer Intern</p>
-                                            <p class="text-sm text-gray-300">| Walstar Media LLP</p>
+                                            <p class="font-semibold">● Web Developer Intern</p>
+                                            <p class="text-sm text-gray-300">| Walstar Media LLP, Kolhapur</p>
+                                            <!-- Middle p tag different color -->
+                                            <p class="text-sm text-green-400">| Sep 2023 - May 2024</p>
+                                            <!-- Last p tag different color -->
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
                         </div>
 
                         <!-- Additional Cards Section (mt-10 for spacing) -->
@@ -454,30 +498,236 @@
                     </div>
                 </div>
 
+                <!-- contact Section-->
 
-
-
-
-
-
-
-
-                <!-- LOADINF Section-->
                 <div class="file-content hidden" id="file-contact">
-                    <h1 class="text-xl text-yellow-400 mb-2">Contact Info</h1>
-                    <p class="text-gray-300">📧 Email: sourabhsjsjsjsj@gmail.com</p>
+                    <div class=" font-sans py-10 px-4 min-h-screen">
+
+                        <div class="max-w-5xl w-full mx-auto text-center mb-10">
+                            <h1 class="text-4xl font-bold mb-4">Let's Connect</h1>
+                            <p class="text-gray-300">I'm always open to new opportunities, collaborations, or just
+                                interesting conversations about development.</p>
+                        </div>
+                        <!-- Flex Container for 3 Columns -->
+                        <div class="flex flex-col md:flex-row justify-center gap-8 max-w-5xl w-full mx-auto mt-8">
+
+                            <!-- Card 1 -->
+
+                            <div
+                                class="w-full md:w-1/3 p-6 rounded-lg bg-[#1a2526] border border-blue-500 rotating-border">
+                                <div>
+                                    <i class="fas fa-phone text-blue-400 text-2xl mb-2"></i>
+                                    <h3 class="text-lg font-semibold">Let's Chat</h3>
+                                    <a href="mailto:dev.sourabhjadhav@gmail.com"
+                                        class="text-yellow-400 text-sm hover:underline">
+                                        dev.sourabhjadhav@gmail.com
+                                    </a>
+
+                                </div>
+                            </div>
+                            <!-- Card 2 -->
+                            <div
+                                class="w-full md:w-1/3 p-6 rounded-lg bg-[#1a2526] border border-green-500 flex justify-center rotating-border">
+                                <div class="flex space-x-4 mt-2">
+                                    <a href="https://github.com/dev-sourabh-jadhav" target="_blank">
+                                        <img src="src/images/github-icon.png" alt="GitHub"
+                                            style="width: 60px; height: 60px; border-radius: 50%; background-color: white; padding: 2px; border: 1px solid gray; box-shadow: 0px 2px 5px rgba(0,0,0,0.2);">
+                                    </a>
+                                    <a href="https://www.linkedin.com/in/sourabh-jadhav05" target="_blank">
+                                        <img src="src/images/linkedin-icon.png" alt="LinkedIn"
+                                            style="width: 60px; height: 60px; border-radius: 50%; background-color: white; padding: 2px; border: 1px solid gray; box-shadow: 0px 2px 5px rgba(0,0,0,0.2);">
+                                    </a>
+                                    <a href="https://www.threads.net/@sourabh_jadhav_95" target="_blank">
+                                        <img src="src/images/threads.png" alt="Threads"
+                                            style="width: 60px; height: 60px; border-radius: 50%; background-color: white; 
+                                                   padding: 2px; border: 1px solid gray; box-shadow: 0px 2px 5px rgba(0,0,0,0.2);">
+                                    </a>
+
+                                </div>
+                            </div>
+
+                            <!-- Card 3 -->
+                            <div
+                                class="w-full md:w-1/3 p-6 rounded-lg bg-[#1a2526] border border-purple-500 rotating-border">
+                                <div>
+                                    <i class="fas fa-calendar-alt text-yellow-400 text-2xl mb-2"></i>
+                                    <h3 class="text-lg font-semibold">Schedule a Call</h3>
+                                    <a href="tel:+917218073132"
+                                        class="text-yellow-400 font-semibold text-sm hover:underline">
+                                        +91 7218073132
+                                    </a>
+
+
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <div class="font-sans py-10 px-4 min-h-screen flex items-center mt-8">
+                        <div
+                            class="max-w-5xl w-full mx-auto bg-[#111827] p-10 rounded-lg border border-pink-500 shadow-lg">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                                <!-- Left Section -->
+                                <div class="space-y-4">
+                                    <p class="text-pink-500 font-bold uppercase tracking-wider">Get in Touch</p>
+                                    <h2 class="text-4xl font-extrabold leading-tight">Let’s Build Something Amazing!
+                                    </h2>
+                                    <p class="text-gray-300 text-base">
+                                        I’m just starting, but I’m excited to work on new projects and grow my skills.
+                                        Reach out, and let’s connect!
+                                    </p>
+                                </div>
+
+                                <!-- Right Section (Form) -->
+                                <div class="bg-gray-900 p-6 rounded-lg shadow-md">
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <input type="text" placeholder="Your Name"
+                                            class="w-full h-10 text-center p-3 rounded-md bg-gray-800 text-white border border-gray-700 focus:ring-2 focus:ring-pink-500 outline-none" />
+                                        <input type="text" placeholder="Phone Number"
+                                            class="w-full h-10 text-center p-3 rounded-md bg-gray-800 text-white border border-gray-700 focus:ring-2 focus:ring-pink-500 outline-none" />
+                                        <input type="email" placeholder="Your Email"
+                                            class="w-full h-10 text-center p-3 rounded-md bg-gray-800 text-white border border-gray-700 focus:ring-2 focus:ring-pink-500 outline-none" />
+                                        <input type="text" placeholder="Subject"
+                                            class="w-full h-10 text-center p-3 rounded-md bg-gray-800 text-white border border-gray-700 focus:ring-2 focus:ring-pink-500 outline-none" />
+                                    </div>
+                                    <textarea placeholder="Your Message"
+                                        class="w-full mt-4 p-3 rounded-md bg-gray-800 text-white border border-gray-700 focus:ring-2 focus:ring-pink-500 outline-none h-24 text-center"></textarea>
+
+                                    <button
+                                        class="mt-4 relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
+                                        <span
+                                            class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
+                                            Send Message
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
                 </div>
+
+                <!-- Project's Section-->
+                <div class="file-content hidden" id="file-project">
+                    <div class="font-sans py-10 px-4 min-h-screen">
+                        <div class="max-w-5xl w-full mx-auto text-center mb-10">
+                            <h1 class="text-4xl font-bold mb-4">Projects</h1>
+                        </div>
+
+                        <!-- Container1  -->
+                        <div class="flex flex-col md:flex-row justify-center gap-8 max-w-5xl w-full mx-auto mt-8">
+
+                            <!-- Card 1 -->
+                            <div class="w-full md:w-1/2 pgroup-card">
+                                <div
+                                    class="project-card p-6 rounded-lg bg-[#1a2526] border border-blue-500 overflow-hidden cursor-pointer">
+                                    <div class="image-container">
+                                        <img src="src/images/instantwebsitedevelopment.png" alt="Project 1"
+                                            class="rounded-lg transition-transform duration-300 ease-in-out w-full">
+                                    </div>
+                                </div>
+                                <!-- Title Below the Image with Precise Underline Animation -->
+                                <div class="pt-6 mt-4 text-center relative inline-block">
+                                    <h3
+                                        class="text-xl font-semibold text-white hover:text-red-400 transition duration-300 relative underline-effect cursor-pointer">
+                                        Instant Website Development
+                                    </h3>
+                                </div>
+                            </div>
+
+                            <!-- Card 2 -->
+                            <div class="w-full md:w-1/2 pgroup-card">
+                                <div
+                                    class="project-card p-6 rounded-lg bg-[#1a2526] border border-green-500 overflow-hidden cursor-pointer">
+                                    <div class="image-container">
+                                        <img src="src/images/5dhealerverse.png" alt="Project 2"
+                                            class="rounded-lg transition-transform duration-300 ease-in-out w-full">
+                                    </div>
+                                </div>
+                                <!-- Title Below the Image with Precise Underline Animation -->
+                                <div class="pt-6 mt-4 text-center relative inline-block">
+                                    <h3
+                                        class="text-xl font-semibold text-white hover:text-red-400 transition duration-300 relative underline-effect cursor-pointer">
+                                        5D healreverse
+                                    </h3>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <!-- Container2 -->
+                        <div class="flex flex-col md:flex-row justify-center gap-8 max-w-5xl w-full mx-auto mt-8 ">
+
+                            <!-- Card 1 -->
+                            <div class="w-full md:w-1/2 pgroup-card">
+                                <div
+                                    class="project-card p-6 rounded-lg bg-[#1a2526] border border-blue-500 overflow-hidden cursor-pointer">
+                                    <div class="image-container">
+                                        <img src="src/images/gramjob.png" alt="Project 1"
+                                            class="rounded-lg transition-transform duration-300 ease-in-out w-full">
+                                    </div>
+                                </div>
+                                <!-- Title Below the Image with Precise Underline Animation -->
+                                <div class="pt-6 mt-4 text-center relative inline-block">
+                                    <h3
+                                        class="text-xl font-semibold text-white hover:text-red-400 transition duration-300 relative underline-effect cursor-pointer">
+                                        Gram Jobs
+                                    </h3>
+                                </div>
+                            </div>
+
+                            <!-- Card 2 -->
+                            <div class="w-full md:w-1/2 pgroup-card">
+                                <div
+                                    class="project-card p-6 rounded-lg bg-[#1a2526] border border-green-500 overflow-hidden cursor-pointer flex justify-center items-center h-48">
+                                    <i class="fas fa-university text-green-500" style="font-size: 4em;"></i>
+
+                                </div>
+                                <!-- Title Below the Icon with Underline Animation -->
+                                <div class="pt-6 mt-4 text-center relative inline-block">
+                                    <h3
+                                        class="text-xl font-semibold text-white hover:text-red-400 transition duration-300 relative underline-effect cursor-pointer">
+                                        Confidential Bank Project
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Repository Section-->
+                <div class="file-content hidden" id="file-repository">
+                    <div class="max-w-5xl w-full mx-auto text-center mb-10">
+                        <h1 class="text-4xl font-bold mb-4">GitHub Repositories</h1>
+                    </div>
+                    <div class="container mt-4">
+                        <div id="repo-list" class="grid grid-cols-1 md:grid-cols-2 gap-8"></div>
+                        <div class="flex flex-col items-center justify-center text-center mt-4">
+                            <div class="max-w-5xl w-full mb-10">
+                                <h1 class="text-4xl font-bold mb-4">Contribution Stats</h1>
+                            </div>
+
+                            <div id="contribution-skeleton"
+                                class="w-full max-w-lg h-32 bg-gray-700 animate-pulse rounded-md"></div>
+
+                            <img id="contribution-image"
+                                src="https://github-readme-streak-stats.herokuapp.com/?user=dev-sourabh-jadhav&theme=dark"
+                                class="max-w-full h-auto mt-4 hidden" alt="GitHub Contributions"
+                                onload="showContributionImage()">
+                        </div>
+
+                    </div>
+                </div>
+
             </div>
-
         </div>
-
     </div>
-
-
-
-
-
-
 </body>
 
 </html>

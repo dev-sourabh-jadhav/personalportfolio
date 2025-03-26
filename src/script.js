@@ -21,7 +21,7 @@ $(document).ready(function () {
 
 
     // LOAD MODEL ON CLICK
-    
+
     $('#loadmore-btn').on('click', function () {
         $('#loadMoreModal').removeClass('hidden').addClass('flex');
     });
@@ -39,5 +39,7 @@ function toggleDropdown() {
     list.classList.toggle("hidden");
     icon.classList.toggle("rotate-180");
 }
+
+
 
 
