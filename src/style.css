@@ -377,7 +377,52 @@
 }
 
 
-.animate-pulse {
-    animation: pulse 1.5s infinite !important;
+/* Basic container styling */
+.sk-main-content {
+    text-align: center;
+    margin-top: 20px;
 }
 
+/* Skeleton loader */
+.skeleton {
+    width: 400px;
+    /* Set fixed width */
+    height: 150px;
+    /* Set fixed height */
+    background-color: #e0e0e0;
+    /* Light gray (for white background) */
+    border-radius: 8px;
+    animation: pulse 1.5s infinite;
+    margin: 0 auto;
+}
+
+/* Pulse animation */
+@keyframes pulse {
+    0% {
+        background-color: #e0e0e0;
+    }
+
+    /* Light gray */
+    50% {
+        background-color: #c0c0c0;
+    }
+
+    /* Darker gray */
+    100% {
+        background-color: #e0e0e0;
+    }
+
+    /* Light gray */
+}
+
+/* Hide elements */
+.hidden {
+    display: none;
+}
+
+/* Image styling */
+.contribution-section>img {
+    width: 400px;
+    height: auto;
+    margin-top: 10px;
+}
