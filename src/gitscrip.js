@@ -29,7 +29,7 @@ $(document).ready(function () {
             });
         },
         error: function () {
-            repoList.html("<p style='color: red; text-align: center;'>Failed to load repositories.</p>");
+            repoList.html("<p style='color: red; text-align: center;'>Out of Limite Try Again Some Time</p>");
         }
     });
 
