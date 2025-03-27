@@ -25,37 +25,44 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
-
 </head>
 
 <body class="h-screen bg-gray-900 text-white font-mono">
 
     <!-- Layout Wrapper -->
-    <div class="flex h-full">
+    <div class="flex">
 
         <!-- Sidebar -->
         <aside class="w-16 bg-gray-800 flex flex-col items-center py-4 space-y-4">
-            <button title="Explorer">📁</button>
-            <button title="Search">🔍</button>
-            <button title="Git">🔧</button>
+            <button id="explorerBtn" title="Explorer">📁</button>
+            <button id="searchBtn" title="Search">🔍</button>
+            <button id="gitBtn" title="Git">🔧</button>
         </aside>
 
         <!-- File Explorer -->
         <div class="w-64 bg-gray-850 border-r border-gray-700 p-4">
             <h2 class="text-sm font-bold text-gray-400 mb-2">EXPLORER</h2>
+
+            <!-- OPEN EDITORS -->
             <div class="text-sm font-bold text-gray-400 mb-2 cursor-pointer flex items-center justify-between"
-                onclick="toggleDropdown()">
-                <span>📁 Portfolio</span>
-                <i id="dropdownIcon" class="bi bi-chevron-down transition-transform duration-200"></i>
+                onclick="toggleDropdown('openEditors')">
+                <span>📝 OPEN EDITORS</span>
+                <i id="dropdownIcon-openEditors" class="bi bi-chevron-down transition-transform duration-200"></i>
             </div>
+            <ul id="openEditors" class="ml-4 hidden"></ul>
 
-
-            <ul id="dropdownList" class="space-y-2 text-sm transition-all duration-300 ease-in-out">
+            <!-- PORTFOLIO FOLDER -->
+            <div class="text-sm font-bold text-gray-400 mb-2 cursor-pointer flex items-center justify-between"
+                onclick="toggleDropdown('portfolio')">
+                <span>📁 Portfolio</span>
+                <i id="dropdownIcon-portfolio" class="bi bi-chevron-down transition-transform duration-200"></i>
+            </div>
+            <ul id="portfolio" class="ml-4">
                 <li>
                     <button
                         class="file-tab hover:bg-gray-700 w-full text-left px-2 py-1 rounded transition duration-150 flex items-center space-x-2"
                         data-file="home">
-                        <img src="src/images/laravel.png" alt="HTML Icon" class="w-4 h-4" />
+                        <img src="src/images/laravel.png" alt="Laravel Icon" class="w-4 h-4" />
                         <span>index.blade.php</span>
                     </button>
                 </li>
@@ -92,10 +99,6 @@
                     </button>
                 </li>
             </ul>
-
-
-
-
         </div>
 
         <!-- Main Content Area -->
@@ -736,7 +739,7 @@
                     <div class="container mt-4">
                         <div id="repo-list" class="grid grid-cols-1 md:grid-cols-2 gap-8"></div>
                         <div class="contribution-section flex flex-col items-center justify-center text-center">
-                           
+
                             <div class="max-w-5xl w-full mx-auto text-center mt-10">
                                 <h1 class="text-4xl font-bold mb-4">Contribution Stats</h1>
                             </div>
@@ -754,8 +757,18 @@
                 </div>
 
             </div>
+
+            <div class="terminal p-4 bg-black text-green-400 h-40 overflow-y-auto hidden" id="terminal">
+                <p>Fake Terminal: Type your commands here...</p>
+            </div>
         </div>
+
+
+
     </div>
+
+
+
 </body>
 
 </html>

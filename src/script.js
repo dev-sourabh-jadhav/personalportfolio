@@ -1,45 +1,93 @@
 $(document).ready(function () {
-    $('.file-tab, .tab').click(function () {
-        // Get the file name from data-file attribute
-        var fileName = $(this).data('file');
-
-        // Hide all content sections
+    function activateTab(fileName, fileText, fileIcon) {
+        // Hide all file content sections
         $('.file-content').addClass('hidden');
 
         // Show the selected file content
         $('#file-' + fileName).removeClass('hidden');
 
         // Remove highlight from all tabs
-        $('.tab').removeClass('bg-gray-700');
+        $('.tab, .file-tab').removeClass('bg-gray-700');
 
-        // Highlight the selected tab
-        $('.tab[data-file="' + fileName + '"]').addClass('bg-gray-700');
+        // Highlight the active tab
+        $('.tab[data-file="' + fileName + '"], .file-tab[data-file="' + fileName + '"]').addClass('bg-gray-700');
+
+        // If tab doesn't exist, add it to tabsContainer
+        if ($('.tab[data-file="' + fileName + '"]').length === 0) {
+            $('#tabsContainer').append(`
+                <div class="tab px-4 py-2 cursor-pointer hover:bg-gray-700 flex items-center space-x-2 bg-gray-700" data-file="${fileName}">
+                    <img src="${fileIcon}" alt="File Icon" class="w-4 h-4" />
+                    <span>${fileText}</span>
+                </div>
+            `);
+        }
+
+        // Update "Open Editors" list
+        $('#openEditors').removeClass('hidden').html(` 
+            <li data-file="${fileName}" class="flex items-center justify-between px-2 py-1 hover:bg-gray-700 rounded">
+                <span class="flex items-center space-x-2">
+                    <img src="${fileIcon}" alt="File Icon" class="w-4 h-4" />
+                    <span>${fileText}</span>
+                </span>
+                <button class="close-editor text-gray-400 hover:text-white" data-file="${fileName}">✖</button>
+            </li>
+        `);
+    }
+
+    // Click event for file tabs
+    $('.file-tab').click(function () {
+        var fileName = $(this).data('file');
+        var fileText = $(this).find('span').text();
+        var fileIcon = $(this).find('img').attr('src');
+        activateTab(fileName, fileText, fileIcon);
     });
 
-    // 👉 Trigger click on default tab (like "index") on page load
-    $('.tab[data-file="index"]').trigger('click');
-
-
-    // LOAD MODEL ON CLICK
-
-    $('#loadmore-btn').on('click', function () {
-        $('#loadMoreModal').removeClass('hidden').addClass('flex');
+    // Click event for opened tabs
+    $(document).on('click', '.tab', function () {
+        var fileName = $(this).data('file');
+        var fileText = $(this).find('span').text();
+        var fileIcon = $(this).find('img').attr('src');
+        activateTab(fileName, fileText, fileIcon);
     });
 
-    // Close modal on close button click
-    $('#closeModal').on('click', function () {
-        $('#loadMoreModal').removeClass('flex').addClass('hidden');
+    // Close Editor and switch back to 'home'
+    $(document).on('click', '.close-editor', function () {
+        $('#openEditors').addClass('hidden').html('');
+        activateTab("home", "index.blade.php", "src/images/laravel.png"); // Switch to home
     });
+
+    // Portfolio & Open Editors Dropdown
+    function toggleDropdown(folderId) {
+        $('#' + folderId).toggleClass('hidden');
+        $('#dropdownIcon-' + folderId).toggleClass('rotate-180');
+    }
+
+    // Default active file on page load
+    $('.file-tab[data-file="home"]').trigger('click');
 });
 
-// Portfolio DROPDOWN
-function toggleDropdown() {
-    const list = document.getElementById("dropdownList");
-    const icon = document.getElementById("dropdownIcon");
+
+
+
+function toggleDropdown(folderId) {
+    const list = document.getElementById(folderId);
+    const icon = document.getElementById(`dropdownIcon-${folderId}`);
+
     list.classList.toggle("hidden");
     icon.classList.toggle("rotate-180");
 }
 
 
+$(document).on("click", "#searchBtn", function (e) {
+    Swal.fire({
+        icon: "info",
+        title: "Partially Responsive Layout",
+        text: "This layout adapts in some areas but maintains a fixed structure like VS Code.",
+        confirmButtonColor: "#3085d6",
+        confirmButtonText: "OK"
+    });
+});
 
-
+$(document).on("click", "#gitBtn", function (e) {
+    $("#terminal").toggleClass("hidden");
+});
