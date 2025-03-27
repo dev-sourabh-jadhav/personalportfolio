@@ -75,6 +75,34 @@ $(document).ready(function () {
     $('#closeModal').on('click', function () {
         $('#loadMoreModal').removeClass('flex').addClass('hidden');
     });
+
+
+    let roles = ["Web Developer", "Web Designer", "PHP & Laravel Developer"];
+    let index = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+
+    function typeEffect() {
+        let currentText = roles[index].substring(0, charIndex);
+        $("#animatedText").text(currentText);
+
+        if (!isDeleting && charIndex < roles[index].length) {
+            charIndex++;
+        } else if (isDeleting && charIndex > 0) {
+            charIndex--;
+        }
+
+        if (!isDeleting && charIndex === roles[index].length) {
+            setTimeout(() => (isDeleting = true), 1500); // Pause before deleting
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            index = (index + 1) % roles.length; // Move to next word
+        }
+
+        setTimeout(typeEffect, isDeleting ? 100 : 150);
+    }
+
+    typeEffect();
 });
 
 
