@@ -64,6 +64,17 @@ $(document).ready(function () {
 
     // Default active file on page load
     $('.file-tab[data-file="home"]').trigger('click');
+
+    // LOAD MODEL ON CLICK
+
+    $('#loadmore-btn').on('click', function () {
+        $('#loadMoreModal').removeClass('hidden').addClass('flex');
+    });
+
+    // Close modal on close button click
+    $('#closeModal').on('click', function () {
+        $('#loadMoreModal').removeClass('flex').addClass('hidden');
+    });
 });
 
 
