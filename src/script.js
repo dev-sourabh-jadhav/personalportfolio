@@ -77,7 +77,13 @@ $(document).ready(function () {
     });
 
 
-    let roles = ["Web Developer", "Web Designer", "PHP & Laravel Developer"];
+    let roles = [
+        "Full Stack Developer",
+        "Backend Developer",
+        "Laravel Developer",
+        "Django Developer"
+    ];
+
     let index = 0;
     let charIndex = 0;
     let isDeleting = false;
