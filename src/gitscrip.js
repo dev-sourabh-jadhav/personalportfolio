@@ -28,8 +28,24 @@ $(document).ready(function () {
                 fetchReadme(username, repo.name);
             });
         },
-        error: function () {
-            repoList.html("<p style='color: red; text-align: center;'>Out of Limite Try Again Some Time</p>");
+        error: function (xhr) {
+
+            let message = "Something went wrong. Please try again later.";
+
+            // ✅ Check if rate limit exceeded
+            if (xhr.status === 403) {
+                message = `
+            <p style="color: red; text-align: center;">
+                GitHub API limit exceeded 😅<br><br>
+                👉 Please check my GitHub profile here:<br>
+                <a href="https://github.com/dev-sourabh-jadhav" target="_blank" style="color: #4CAF50; font-weight: bold;">
+                    Visit My GitHub
+                </a>
+            </p>
+        `;
+            }
+
+            repoList.html(message);
         }
     });
 
