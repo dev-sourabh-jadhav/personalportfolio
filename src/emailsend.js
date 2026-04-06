@@ -1,8 +1,10 @@
 $(document).ready(function () {
-    emailjs.init("lkshqwzAqIBEhFqq6"); // Replace with your Public Key
+
+    // ✅ Initialize with your NEW Public Key
+    emailjs.init("BZ6C-eVvASh9oUOyt");
 
     $("#sendMessage").on("click", function (event) {
-        event.preventDefault(); // Prevent page reload
+        event.preventDefault();
 
         let name = $("#name").val().trim();
         let phone = $("#phone").val().trim();
@@ -10,7 +12,7 @@ $(document).ready(function () {
         let subject = $("#subject").val().trim();
         let message = $("#message").val().trim();
 
-        // Basic validation
+        // ✅ Validation
         if (name === "" || email === "" || message === "") {
             Swal.fire({
                 toast: true,
@@ -19,12 +21,11 @@ $(document).ready(function () {
                 title: "Please fill in all required fields!",
                 showConfirmButton: false,
                 timer: 3000,
-                timerProgressBar: true,
             });
             return;
         }
 
-        // Show "Sending..." alert
+        // ✅ Loading alert
         Swal.fire({
             title: "Sending...",
             text: "Please wait while we send your message.",
@@ -44,75 +45,45 @@ $(document).ready(function () {
             message: message,
         };
 
-        // Send email to admin
-        $.ajax({
-            url: "https://api.emailjs.com/api/v1.0/email/send",
-            type: "POST",
-            contentType: "application/json",
-            data: JSON.stringify({
-                service_id: "service_bhqskev",
-                template_id: "template_f6vikvu",
-                user_id: "lkshqwzAqIBEhFqq6",
-                template_params: templateParams,
-            }),
-            success: function (response) {
+        // ✅ Send email to ADMIN
+        emailjs.send("service_5uenqyf", "template_f6vikvu", templateParams)
+            .then(function (response) {
                 console.log("Admin Email Sent", response);
 
-                // Now send a "Thank You" email to the user
-                sendThankYouEmail(email, name, phone, subject, message);
-            },
-            error: function (error) {
+                // ✅ Send Thank You email
+                sendThankYouEmail(templateParams);
+            })
+            .catch(function (error) {
                 Swal.fire({
-                    toast: true,
-                    position: "top-end",
                     icon: "error",
-                    title: "Failed to send your message. Please try again.",
-                    showConfirmButton: false,
-                    timer: 3000,
-                    timerProgressBar: true,
+                    title: "Failed!",
+                    text: "Failed to send your message.",
                 });
 
                 console.log("FAILED...", error);
-            },
-        });
+            });
     });
 
-    // Function to send a Thank You email
-    function sendThankYouEmail(email, name, phone, subject, message) {
-        let thankYouParams = {
-            user_name: name,
-            user_phone: phone,
-            user_email: email,
-            subject: subject,
-            message: message,
-        };
+    // ✅ Thank You Email Function
+    function sendThankYouEmail(params) {
 
-        $.ajax({
-            url: "https://api.emailjs.com/api/v1.0/email/send",
-            type: "POST",
-            contentType: "application/json",
-            data: JSON.stringify({
-                service_id: "service_bhqskev",
-                template_id: "template_f6vikvu",
-                user_id: "lkshqwzAqIBEhFqq6",
-                template_params: thankYouParams,
-            }),
-            success: function (response) {
+        emailjs.send("service_5uenqyf", "template_f6vikvu", params)
+            .then(function (response) {
+
                 Swal.fire({
                     icon: "success",
                     title: "Message Sent Successfully!",
                     text: "We will get back to you soon.",
-                    showConfirmButton: true,
                 });
 
                 console.log("Thank You Email Sent", response);
 
-                // Clear form fields
+                // ✅ Clear form
                 $("#name, #phone, #email, #subject, #message").val("");
-            },
-            error: function (error) {
-                console.log("Failed to send Thank You email", error);
-            },
-        });
+            })
+            .catch(function (error) {
+                console.log("Thank You Email Failed", error);
+            });
     }
+
 });
