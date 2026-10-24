@@ -1,89 +1,71 @@
 $(document).ready(function () {
-
-    // ✅ Initialize with your NEW Public Key
     emailjs.init("BZ6C-eVvASh9oUOyt");
+
+    const SERVICE_ID = "service_5uenqyf";
+    const ADMIN_TEMPLATE = "template_f6vikvu";
+    const REPLY_TEMPLATE = "";   // paste your auto-reply template ID here (see below)
+
+    const isEmail = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+
+    const toast = (icon, title) =>
+        Swal.fire({ toast: true, position: "top-start", icon, title, showConfirmButton: false, timer: 3000 });
 
     $("#sendMessage").on("click", function (event) {
         event.preventDefault();
 
-        let name = $("#name").val().trim();
-        let phone = $("#phone").val().trim();
-        let email = $("#email").val().trim();
-        let subject = $("#subject").val().trim();
-        let message = $("#message").val().trim();
+        const params = {
+            user_name: $("#name").val().trim(),
+            user_phone: $("#phone").val().trim(),
+            user_email: $("#email").val().trim(),
+            subject: $("#subject").val().trim(),
+            message: $("#message").val().trim(),
+        };
 
-        // ✅ Validation
-        if (name === "" || email === "" || message === "") {
-            Swal.fire({
-                toast: true,
-                position: "top-start",
-                icon: "warning",
-                title: "Please fill in all required fields!",
-                showConfirmButton: false,
-                timer: 3000,
-            });
-            return;
+        if (!params.user_name || !params.user_email || !params.message) {
+            return toast("warning", "Please fill in all required fields!");
+        }
+        if (!isEmail(params.user_email)) {
+            return toast("error", "Enter a valid email like name@example.com");
         }
 
-        // ✅ Loading alert
+        const $btn = $(this).prop("disabled", true);
+
         Swal.fire({
             title: "Sending...",
             text: "Please wait while we send your message.",
             icon: "info",
             allowOutsideClick: false,
             showConfirmButton: false,
-            didOpen: () => {
-                Swal.showLoading();
-            }
+            didOpen: () => Swal.showLoading(),
         });
 
-        let templateParams = {
-            user_name: name,
-            user_phone: phone,
-            user_email: email,
-            subject: subject,
-            message: message,
-        };
-
-        // ✅ Send email to ADMIN
-        emailjs.send("service_5uenqyf", "template_f6vikvu", templateParams)
+        // 1) Message to you (admin)
+        emailjs.send(SERVICE_ID, ADMIN_TEMPLATE, params)
             .then(function (response) {
-                console.log("Admin Email Sent", response);
-
-                // ✅ Send Thank You email
-                sendThankYouEmail(templateParams);
-            })
-            .catch(function (error) {
-                Swal.fire({
-                    icon: "error",
-                    title: "Failed!",
-                    text: "Failed to send your message.",
-                });
-
-                console.log("FAILED...", error);
-            });
-    });
-
-    // ✅ Thank You Email Function
-    function sendThankYouEmail(params) {
-
-        emailjs.send("service_5uenqyf", "template_f6vikvu", params)
-            .then(function (response) {
+                console.log("Admin email sent", response);
 
                 Swal.fire({
                     icon: "success",
                     title: "Message Sent Successfully!",
-                    text: "We will get back to you soon.",
+                    text: "I will get back to you soon.",
                 });
-
-                console.log("Thank You Email Sent", response);
-
-                // ✅ Clear form
                 $("#name, #phone, #email, #subject, #message").val("");
+
+                // 2) Thank-you to the visitor (runs in the background, optional)
+                if (REPLY_TEMPLATE) {
+                    emailjs.send(SERVICE_ID, REPLY_TEMPLATE, params)
+                        .then((r) => console.log("Thank-you email sent", r))
+                        .catch((e) => console.log("Thank-you email failed", e));
+                }
             })
             .catch(function (error) {
-                console.log("Thank You Email Failed", error);
-            });
-    }
-
+                console.log("FAILED...", error);
+                Swal.fire({
+                    icon: "error",
+                    title: "Failed!",
+                    text: (error && error.text) || "Failed to send your message.",
+                });
+            })
+            .finally(() => $btn.prop("disabled", false));
+    });
 });
